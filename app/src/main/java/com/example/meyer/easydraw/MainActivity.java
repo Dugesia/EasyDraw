@@ -30,7 +30,10 @@ public class MainActivity extends AppCompatActivity
     Bitmap bitmap;
     Canvas canvas;
     Paint paint;
-    int BrushSize=20;
+    int BrushSize=40;
+    float oldX=0,oldY=0;
+    Bitmap saveBitMap;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +58,9 @@ public class MainActivity extends AppCompatActivity
         float dw = currentDisplay.getWidth();
         float dh = currentDisplay.getHeight();
 
-
-
+        saveBitMap=Bitmap.createBitmap((int) dw, (int) dh, Bitmap.Config.ARGB_8888);
         bitmap = Bitmap.createBitmap((int) dw, (int) dh, Bitmap.Config.ARGB_8888);
+
         canvas = new Canvas(bitmap);
         paint = new Paint();
         paint.setColor(Color.BLACK);
@@ -74,6 +77,8 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -118,17 +123,19 @@ public class MainActivity extends AppCompatActivity
             paint.setColor(Color.rgb(255,250,10));
         } else if (id == R.id.nav_haut) {
             paint.setColor(Color.rgb(255,230,180));
-        }else if (id == R.id.nav_schwarz) {
+        } else if (id == R.id.nav_schwarz) {
             paint.setColor(Color.rgb(0,0,0));
+        } else if (id == R.id.nav_weiss) {
+            paint.setColor(Color.rgb(255,255,255));
         }
         else if (id == R.id.nav_kleiner) {
             try {
-                BrushSize=BrushSize-10;
+                BrushSize=BrushSize/2;
             }catch (Exception ex) {}
         }
         else if (id == R.id.nav_groesser) {
             try {
-                BrushSize=BrushSize+10;
+                BrushSize=BrushSize*2;
             }catch (Exception ex) {}
         }
 
@@ -139,8 +146,16 @@ public class MainActivity extends AppCompatActivity
 
     private void touch_move(View view,float x, float y)
     {
-        canvas.drawCircle(x,y,BrushSize,paint);
+
+        canvas.drawCircle(x,y,BrushSize/2,paint);
+
+        paint.setStrokeWidth(BrushSize);
+        canvas.drawLine(oldX,oldY,x,y,paint);
         view.invalidate();
+        oldY=y;
+        oldX=x;
+
+        //alte x,y werte speichern und linie ziehen
     }
 
     @Override
@@ -150,6 +165,8 @@ public class MainActivity extends AppCompatActivity
 
         switch (motionEvent.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                oldX=motionEvent.getX();
+                oldY=motionEvent.getY();
                 touch_move(view,x, y);
                 break;
             case MotionEvent.ACTION_MOVE:

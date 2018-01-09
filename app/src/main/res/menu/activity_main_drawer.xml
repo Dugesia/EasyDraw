@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/nav_group_color" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_rot"
             android:title="Rot"
@@ -33,12 +33,16 @@
             android:id="@+id/nav_schwarz"
             android:icon="@drawable/ic_menu_camera"
             android:title="Schwarz" />
+        <item
+        android:id="@+id/nav_weiss"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="Schwarz" />
     </group>
 
-    <group android:checkableBehavior="single" >
+    <group android:id="@+id/nav_group_size" android:checkableBehavior="single" >
         <item
             android:id="@+id/nav_kleiner"
-            android:title="kleiner"
+            android:title="Kleiner"
             android:icon="@drawable/ic_menu_camera"
             />
         <item
