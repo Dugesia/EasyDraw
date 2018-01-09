@@ -5,34 +5,46 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_rot"
+            android:title="Rot"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:iconTint="@android:color/holo_red_dark"/>
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_gruen"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Grün" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_blau"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Blau" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_gelb"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Gelb" />
+        <item
+            android:id="@+id/nav_braun"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Braun" />
+        <item
+            android:id="@+id/nav_haut"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Haut" />
+        <item
+            android:id="@+id/nav_schwarz"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Schwarz" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+    <group android:checkableBehavior="single" >
+        <item
+            android:id="@+id/nav_kleiner"
+            android:title="kleiner"
+            android:icon="@drawable/ic_menu_camera"
+            />
+        <item
+            android:id="@+id/nav_groesser"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Größer" />
+    </group>
 
 </menu>
