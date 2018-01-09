@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        imageView = (ImageView)  findViewById(R.id.con_image);
+        imageView = (ImageView)  findViewById(R.id.main_imageView);
         Display currentDisplay = getWindowManager().getDefaultDisplay();
         float dw = currentDisplay.getWidth();
         float dh = currentDisplay.getHeight();
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity
         int cTemp= paint.getColor();
         paint.setColor(Color.WHITE);
         canvas.drawRect(0,0,canvas.getWidth(),canvas.getHeight(),paint);
-        View view=(View)findViewById(R.id.con_image);
+        View view=(View)findViewById(R.id.main_imageView);
         view.invalidate();
         paint.setColor(cTemp);
     }
@@ -129,13 +129,11 @@ public class MainActivity extends AppCompatActivity
             paint.setColor(Color.rgb(0,0,0));
         } else if (id == R.id.nav_weiss) {
             paint.setColor(Color.rgb(255,255,255));
-        }
-        else if (id == R.id.nav_kleiner) {
+        } else if (id == R.id.nav_kleiner) {
             try {
                 BrushSize=BrushSize/2;
             }catch (Exception ex) {}
-        }
-        else if (id == R.id.nav_groesser) {
+        } else if (id == R.id.nav_groesser) {
             try {
                 BrushSize=BrushSize*2;
             }catch (Exception ex) {}
