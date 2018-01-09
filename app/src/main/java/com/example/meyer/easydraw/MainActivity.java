@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        imageView = (ImageView)  findViewById(R.id.main_imageView);
+        imageView = (ImageView)  findViewById(R.id.con_image);
         Display currentDisplay = getWindowManager().getDefaultDisplay();
         float dw = currentDisplay.getWidth();
         float dh = currentDisplay.getHeight();
@@ -99,10 +99,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void ClearImage(){
+        int cTemp= paint.getColor();
         paint.setColor(Color.WHITE);
         canvas.drawRect(0,0,canvas.getWidth(),canvas.getHeight(),paint);
-        View view=(View)findViewById(R.id.main_imageView);
+        View view=(View)findViewById(R.id.con_image);
         view.invalidate();
+        paint.setColor(cTemp);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

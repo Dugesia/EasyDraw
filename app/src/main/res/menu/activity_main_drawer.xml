@@ -6,9 +6,9 @@
     <group android:id="@+id/nav_group_color" android:checkableBehavior="single">
         <item
             android:id="@+id/nav_rot"
-            android:title="Rot"
             android:icon="@drawable/ic_menu_camera"
-            android:iconTint="@android:color/holo_red_dark"/>
+            android:title="Rot"
+            />
         <item
             android:id="@+id/nav_gruen"
             android:icon="@drawable/ic_menu_camera"
@@ -34,9 +34,9 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Schwarz" />
         <item
-        android:id="@+id/nav_weiss"
-        android:icon="@drawable/ic_menu_camera"
-        android:title="Schwarz" />
+            android:id="@+id/nav_weiss"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Weiß" />
     </group>
 
     <group android:id="@+id/nav_group_size" android:checkableBehavior="single" >
